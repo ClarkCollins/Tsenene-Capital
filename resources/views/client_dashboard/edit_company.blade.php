@@ -33,43 +33,34 @@
                 <div class="card">
                     <div style="margin-left: 100px; margin-right: 100px;padding-bottom: 30px;padding-top: 30px" class="col-md-offset-1 col-md-10">
 
-
-                        <h2>{{$company->company_name}}</h2>
+                        <h2>Edit Company</h2>
                         <br>
-
-
-                        {!!Form::open(['action'=>['CompaniesController@destroy', $company->id], 'method' =>'POST', 'class'=>'pull-right'])!!}
-
-
-<!--                        {{Form::hidden('_method', 'DELETE')}}
-                        {{Form::submit('Delete',['class'=>'btn btn-danger'])}}-->
-
-                        {!! Form::close() !!}
                         <a href="/dashboard" class="btn btn-default pull-right">Back</a>
                         <br><hr>
 
 
-                        {!! Form::open(['action' => ['CompaniesController@show',$company->id], 'method' =>'GET']) !!}
+                        {!! Form::open(['action' => ['CompaniesController@update',$company->id], 'method' =>'POST']) !!}
 
                         <div class="form-group col-md-offset-2 col-md-8">
                             {{Form::label('company_name', 'Company Name')}}
-                            {{Form::text('company_name',$company->company_name,['class'=>'form-control','placeholder'=>'Company Name','readonly'])}}
+                            {{Form::text('company_name',$company->company_name,['class'=>'form-control','placeholder'=>'Company Name'])}}
                         </div>
 
                         <div class="form-group col-md-offset-2 col-md-8">
                             {{Form::label('registration_number', 'Registration Number')}}
-                            {{Form::text('registration_number',$company->registration_number,['class'=>'form-control','placeholder'=>'Registration Number','readonly' => 'true'])}}
+                            {{Form::text('registration_number',$company->registration_number,['class'=>'form-control','placeholder'=>'Registration Number'])}}
                         </div>
 
                         <div class="form-group col-md-offset-2 col-md-8">
                             {{Form::label('website_url', 'Website')}}
-                            {{Form::text('website_url',$company->website_url,['class'=>'form-control','placeholder'=>'Website','readonly' => 'true'])}}
+                            {{Form::text('website_url',$company->website_url,['class'=>'form-control','placeholder'=>'Website'])}}
                         </div>
 
                         <div class="form-group col-md-offset-2 col-md-8">
                             {{Form::label('industry', 'Industry')}}
-                            {{Form::text('industry',$company->industry,['class'=>'form-control','placeholder'=>'Industry','readonly' => 'true'])}}
+                            {{Form::text('industry',$company->industry,['class'=>'form-control','placeholder'=>'Industry' ])}}
                         </div>
+
                         @if ($company->has_bank_account === 'Yes')
                         <div class="form-group col-md-offset-2 col-md-8">
                             {{Form::label('has_bank_account', 'Bank Account ?')}}
@@ -99,23 +90,33 @@
 
                         <div class="form-group col-md-offset-1 col-md-10">
                             {{Form::label('mission_statement', 'Mission Statement')}}
-                            {!!Form::textarea('mission_statement',$company->mission_statement,['id'=>'article-ckeditor','class'=>'form-control','placeholder'=>'Mission Statement','readonly' => 'true'])!!}
+                            {{Form::textarea('mission_statement',$company->mission_statement,['id'=>'article-ckeditor','class'=>'form-control','placeholder'=>'Mission Statement'])}}
                         </div>
 
                         <div class="form-group col-md-offset-1 col-md-10">
                             {{Form::label('activity_description', 'Activity description')}}
-                            {!!Form::textarea('activity_description',$company->activity_description,['id'=>'article-ckeditor1','class'=>'form-control','placeholder'=>'Activity description','readonly' => 'true'])!!}
+                            {{Form::textarea('activity_description',$company->activity_description,['id'=>'article-ckeditor1','class'=>'form-control','placeholder'=>'Activity description'])}}
                         </div>
 
                         <div class="form-group col-md-offset-2 col-md-8">
                             {{Form::label('primary_contact_number', 'Primary Contact Number')}}
-                            {!!Form::number('primary_contact_number',$company->primary_contact_number,['class'=>'form-control','placeholder'=>'Primary Contact Number','readonly' => 'true'])!!}
+                            {{Form::number('primary_contact_number',$company->primary_contact_number,['class'=>'form-control','placeholder'=>'Primary Contact Number'])}}
                         </div>
 
                         <div class="form-group col-md-offset-2 col-md-8">
                             {{Form::label('primary_contact_email', 'Primary Contact Email')}}
-                            {{Form::text('primary_contact_email',$company->primary_contact_email,['class'=>'form-control','placeholder'=>'Primary Contact Email','readonly' => 'true'])}}
+                            {{Form::text('primary_contact_email',$company->primary_contact_email,['class'=>'form-control','placeholder'=>'Primary Contact Email'])}}
                         </div>
+
+
+                        {!! Form::hidden('_method', 'PUT') !!}
+
+
+                        {{Form::submit('Submit',['class'=>'btn btn-xl btn-dark  col-md-offset-4 col-md-4'])}}
+
+
+                        {!! Form::close() !!}
+
 
                     </div>   
                 </div>
@@ -124,9 +125,5 @@
     </div>
     @include('layouts.inc.new_footer')
 </div>
-<!-- ============================================================== -->
-<!-- End Container fluid  -->
-
-
-<!-- ============================================================== -->
 @endsection
+

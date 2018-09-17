@@ -9,8 +9,8 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <!-- Favicon icon -->
-     <link href="img/favicon.png" rel="icon">
-     <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+     <link href="{{ asset('img/favicon.png') }}" rel="icon">
+     <link href="{{ asset('img/apple-touch-icon.png') }}" rel="apple-touch-icon">
     <title>Tsenene</title>
     <!-- Custom CSS -->
     <link href="{{ asset('css/chartist.min.css') }}" rel="stylesheet" type="text/css">

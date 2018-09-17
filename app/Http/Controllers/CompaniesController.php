@@ -25,11 +25,13 @@ class CompaniesController extends Controller
      */
     public function dashboard()
     {
-         $user_id = auth()->user()->id;
+        $user_id = auth()->user()->id;
         $user = User::find($user_id);
         $trackings = Tracking::select()->get();
         $uploads = Upload::select()->get();
-        $companies = Company::orderBy('company_name', 'asc')->paginate(5);
+        $deleted = "No";
+//        $companies = DB::select('select * from companies where deleted =?',[$deleted]);
+        $companies = Company::select('*')->paginate(5);
         return view('client_dashboard.dashboard',['companies'=> $companies,'trackings'=>$trackings,'uploads'=>$uploads]);
       
     }
@@ -141,7 +143,7 @@ public function view_companies()
         $users = User::orderBy('name', 'desc')->get();
         $company = Company::find($id);
        // return view('companies.edit')->with('company', $company);
-        return view('companies.edit_company',['company'=>$company, 'banks'=>$banks, 'users'=>$users]);
+        return view('client_dashboard.edit_company',['company'=>$company, 'banks'=>$banks, 'users'=>$users]);
     }
 
     /**
@@ -181,8 +183,16 @@ public function view_companies()
  
         $company->save();
 
-        return redirect('/companies')->with('success', 'Company Updated');
+        return redirect('/dashboard')->with('success', 'Company Updated');
     }
+     public function delete($id)
+    {
+        $company = Company::find($id);
+        $company->deleted  = "Yes";
+        $company->save();
+        return redirect('/dashboard')->with('success', 'Company Deleted');
+    }
+
 
     /**
      * Remove the specified resource from storage.

@@ -42,8 +42,7 @@
                                 <tr>
                                     <th>Name</th>
                                     <th>Contact</th>
-                                    <th>Reg No.</th>
-                                    <th>Uploads / Tracking</th>
+                                    <th>Submissions</th>
                                     <th>Actions</th>
                                 </tr>
                             </thead>
@@ -52,14 +51,13 @@
                                 <tr>
                                     <td>{{$company->company_name}}</td>
                                     <td>{{$company->primary_contact_email}}</td>
-                                    <td>{{$company->registration_number}}</td>
-                                    <td style="width: 150px">
+                                    <td>
                                         @if($company->documents_upload == "No")
                                             <a class="text-center"href="/upload/{{$company->id}}"><i class="fa fa-upload" aria-hidden="true"></i> Upload</a> /
                                         @else
                                         @foreach($uploads as $upload)
                                         @if($company->id == $upload->company_id && $upload->deleted == "No")
-                                            <a class="text-center"href="{{route('uploads.show', ['upload'=>$upload] )}}"> View</a> /
+                                            <a class="text-center"href="{{route('uploads.show', ['upload'=>$upload] )}}"> View Upload</a> /
                                         @endif
                                         @endforeach
                                         @endif
@@ -69,14 +67,15 @@
                                         @else
                                         @foreach($trackings as $tracking)
                                         @if($company->id == $tracking->company_id && $tracking->deleted == "No")
-                                            <a class="text-center"href="{{route('tracking.show', ['tracking'=>$tracking] )}}"><i class="fa fa-map-marker" aria-hidden="true"></i> View</a>
+                                            <a class="text-center"href="{{route('tracking.show', ['tracking'=>$tracking] )}}"><i class="fa fa-map-marker" aria-hidden="true"></i> View Tracking</a>
                                        
                                         @endif
                                         @endforeach
                                         @endif
                                     </td>
-                                    <td><a class="text-center"href="{{route('companies.show', ['company'=>$company] )}}">View</a>
-                                        / Delete</td>
+                                    <td><a class="text-center"href="{{route('companies.show', ['company'=>$company] )}}">View</a> / 
+                                        <a class="text-center"href="/companies/{{$company->id}}/edit">Edit</a>
+                                        / <a class="text-center"href="/delete_company/{{$company->id}}">Delete</a></td>
                                 </tr>
                                 @endforeach
                             </tbody>

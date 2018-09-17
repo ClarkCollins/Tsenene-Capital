@@ -33,7 +33,7 @@ class TrackingController extends Controller
         $users = User::orderBy('name', 'desc')->get();
         $banks = Bank::orderBy('bank_name', 'desc')->get();
 
-        return view('tracking.create_tracking', ['users'=>$users,'company'=>$company]);
+        return view('client_dashboard.create_tracking', ['users'=>$users,'company'=>$company,'id'=>$id]);
     }
 
     /**
@@ -88,7 +88,7 @@ class TrackingController extends Controller
         $tracking->save();
 
 //        return redirect('/company_list',['company'=>$company, 'banks'=>$banks, 'users'=>$users, 'success'=>'Captured Successfully']);
-        return redirect('/companies')->with('success', 'Captured Successfuly');
+        return redirect('/dashboard')->with('success', 'Captured Successfuly');
     }
 
     /**
@@ -103,7 +103,7 @@ class TrackingController extends Controller
         $users = User::orderBy('name', 'desc')->get();
         $company = Company::select()->get();
         $tracking = Tracking::find($id);
-        return view('tracking.show_tracking',['tracking'=>$tracking, 'banks'=>$banks, 'users'=>$users,'companies'=>$company]);
+        return view('client_dashboard.show_tracking',['tracking'=>$tracking, 'banks'=>$banks, 'users'=>$users,'companies'=>$company]);
     }
     
      public function view_tracking($id)
@@ -142,7 +142,7 @@ class TrackingController extends Controller
         $tracking = Tracking::find($id);
         $tracking->deleted = "Yes";
         $tracking->save();
-        return redirect('/companies')->with('success', 'Tracking Deleted');
+        return redirect('/dashboard')->with('success', 'Tracking Deleted');
     }
 
     /**

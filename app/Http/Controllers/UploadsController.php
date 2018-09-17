@@ -395,7 +395,7 @@ class UploadsController extends Controller
         $company = Company::select()->get();
         $uploads = Upload::find($id);
 
-        return view('uploads.show_upload_company_documents',['companies'=>$company, 'banks'=>$banks, 'users'=>$users,'uploads'=>$uploads]);
+        return view('client_dashboard.show_upload_company_documents',['companies'=>$company, 'banks'=>$banks, 'users'=>$users,'uploads'=>$uploads]);
     }
     
     public function all_upload($id)
@@ -436,7 +436,7 @@ class UploadsController extends Controller
         $uploads = Upload::find($id);
         $uploads->deleted = "Yes";
         $uploads->save();
-        return redirect('/companies')->with('success', 'Upload Deleted');
+        return redirect('/dashboard')->with('success', 'Upload Deleted');
     }
 
     /**

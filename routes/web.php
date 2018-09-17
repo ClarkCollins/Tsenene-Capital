@@ -41,6 +41,7 @@ Route::post('/upload_/{id}', 'UploadsController@store');
 Route::post('/upload_d/{id}', 'UploadsController@update');
 
 Route::get('/add_company', 'CompaniesController@create');
+Route::get('/delete_company/{id}', 'CompaniesController@delete');
 
 Auth::routes();
 Route::get('/all_company', 'CompaniesController@view_companies');

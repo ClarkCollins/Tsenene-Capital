@@ -33,9 +33,10 @@
             <div class="col-12">
                 <div class="card">
                     <div class="card-body">
-                        <h4 class="card-title">Upload documents</h4>
+                        
                     </div>
-                    <div class="container" style="padding-bottom: 50px; padding-top: 30px">
+                    <div style="margin-left: 100px; margin-right: 100px; padding-bottom: 30px" class="col-md-offset-1 col-md-10">
+                        <h4 class="card-title">Upload documents</h4><br>
         <a href="/dashboard" class="btn btn-default pull-right">Back</a>
         <br><hr>
 

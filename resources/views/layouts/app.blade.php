@@ -54,7 +54,7 @@
                     <!-- Logo -->
                     <!-- ============================================================== -->
                     <div class="navbar-brand">
-                        <a href="index.html" class="logo">
+                        <a href="/dashboard" class="logo">
                             <h4 style="text-align: center"><b><span  style="color:#3EC1D5">Tsenene</span>&nbsp;<span  style="color:#FFFFFF">Capital</span></b></h4>
                         </a>
                     </div>
@@ -108,8 +108,6 @@
                             <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark pro-pic" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="images/collins.jpg" alt="user" class="rounded-circle" width="31">&nbsp;&nbsp;<span style="color:black">{{Auth::user()->name}}</span></a>
                             <div class="dropdown-menu dropdown-menu-right user-dd animated">
                                 <a class="dropdown-item" href="javascript:void(0)"><i class="ti-user m-r-5 m-l-5"></i> My Profile</a>
-                                <a class="dropdown-item" href="javascript:void(0)"><i class="ti-wallet m-r-5 m-l-5"></i> My Balance</a>
-                                <a class="dropdown-item" href="javascript:void(0)"><i class="ti-email m-r-5 m-l-5"></i> Inbox</a>
                                 <a href="{{ route('logout') }}"
                                    onclick="event.preventDefault();
                                        document.getElementById('logout-form').submit();">&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-power-off m-r-5 m-l-5"></i>
