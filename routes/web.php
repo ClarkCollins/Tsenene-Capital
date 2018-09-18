@@ -43,6 +43,11 @@ Route::post('/upload_d/{id}', 'UploadsController@update');
 Route::get('/add_company', 'CompaniesController@create');
 Route::get('/delete_company/{id}', 'CompaniesController@delete');
 
+Route::get('/profile', 'ProfileController@profile');
+Route::post('/profile_update', 'ProfileController@update_user_profile');
+Route::get('/delete_photo', 'ProfileController@delete_user_photo');
+Route::post('/update_password', 'ProfileController@update_user_password');
+
 Auth::routes();
 Route::get('/all_company', 'CompaniesController@view_companies');
 Route::get('/all_upload/{id}', 'UploadsController@all_upload');

@@ -1,5 +1,9 @@
- <!-- Footer -->
-    <footer class="footer text-center" style="background-color: #333333">
+<style>
+    
+</style>
+
+<!-- Footer -->
+    <footer class="footer text-center" style="background-color: #F1F1F1">
       <div class="container">
         <ul class="list-inline mb-5">
           <li class="list-inline-item">

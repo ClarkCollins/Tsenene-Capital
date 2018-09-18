@@ -7,7 +7,7 @@
     <div class="page-breadcrumb">
         <div class="row">
             <div class="col-5 align-self-center">
-                <h4 class="page-title">Company Profile</h4>
+                <h4 class="page-title">Upload</h4>
             </div>
             <div class="col-7 align-self-center">
                 <div class="d-flex align-items-center justify-content-end">
@@ -16,7 +16,7 @@
                             <li class="breadcrumb-item">
                                 <a href="#">Home</a>
                             </li>
-                            <li class="breadcrumb-item active" aria-current="page">Company Profile</li>
+                            <li class="breadcrumb-item active" aria-current="page">Upload</li>
                         </ol>
                     </nav>
                 </div>
@@ -30,7 +30,7 @@
         <div class="row">
             <div class="col-12">
                 <div class="card">
-                    <div style="margin-left: 100px; margin-right: 100px;padding-bottom: 30px;padding-top: 30px" class="col-md-offset-1 col-md-10">
+                    <div style="margin: auto;padding-bottom: 30px;padding-top: 30px" class="col-md-offset-1 col-md-10">
 
 <h2>Uploaded Files</h2>
         <br>
@@ -43,7 +43,7 @@
             @endforeach
             <button type="submit" class="btn btn-danger pull-right">Delete</button>
         </form>
-        <a href="/dashboard" class="btn btn-default pull-right">Back</a>
+        <a style="margin-right: 20px" href="/dashboard" class="btn btn-default pull-right">Back</a>
         <br><hr>
         @if($uploads->bee_certificate == "nodocument.jpg")
         <div><h4>BEE Certificate <br></h4>N/A</div>

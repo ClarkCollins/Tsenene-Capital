@@ -34,7 +34,7 @@
                     <div class="card-body">
                         <h4 class="card-title">List of Companies</h4>
                     </div>
-                    <a href="add_company" class="btn">Add New Company</a>
+                    <a id="create_btn" href="add_company" class="btn">Add New Company</a>
                     <div class="table-responsive m-t-40"  style="margin-left: 2px; margin-right: 1px">
                         <table id="myTable" class="table-bordered table-striped"cellspacing="0" width="100%">
 
@@ -46,37 +46,39 @@
                                     <th>Actions</th>
                                 </tr>
                             </thead>
-                            <tbody>
+                            <tbody> 
                                 @foreach($companies as $company)
+                                @if($company -> deleted == "No")
                                 <tr>
-                                    <td>{{$company->company_name}}</td>
-                                    <td>{{$company->primary_contact_email}}</td>
+                                    <td><?php echo ucwords($company->company_name)?></td>
+                                    <td><?php echo ucfirst($company->primary_contact_email)?></td>
                                     <td>
                                         @if($company->documents_upload == "No")
-                                            <a class="text-center"href="/upload/{{$company->id}}"><i class="fa fa-upload" aria-hidden="true"></i> Upload</a> /
+                                            <a title="upload documents" id="text_btn" class="text-center"href="/upload/{{$company->id}}"><i class="fa fa-upload" aria-hidden="true"></i> Upload</a> /
                                         @else
                                         @foreach($uploads as $upload)
                                         @if($company->id == $upload->company_id && $upload->deleted == "No")
-                                            <a class="text-center"href="{{route('uploads.show', ['upload'=>$upload] )}}"> View Upload</a> /
+                                            <a title="view upload" id="text_btn" class="text-center"href="{{route('uploads.show', ['upload'=>$upload] )}}"> View Upload</a> /
                                         @endif
                                         @endforeach
                                         @endif
 
                                         @if($company->Tracked == "No")
-                                            <a class="text-center"href="/trackings/{{$company->id}}"><i class="fa fa-map-marker" aria-hidden="true"></i> Tracking</a>
+                                            <a title="tracking" id="text_btn" class="text-center"href="/trackings/{{$company->id}}"><i class="fa fa-map-marker" aria-hidden="true"></i> Tracking</a>
                                         @else
                                         @foreach($trackings as $tracking)
                                         @if($company->id == $tracking->company_id && $tracking->deleted == "No")
-                                            <a class="text-center"href="{{route('tracking.show', ['tracking'=>$tracking] )}}"><i class="fa fa-map-marker" aria-hidden="true"></i> View Tracking</a>
+                                            <a title="view tracking" id="text_btn" class="text-center"href="{{route('tracking.show', ['tracking'=>$tracking] )}}"></i> View Tracking</a>
                                        
                                         @endif
                                         @endforeach
                                         @endif
                                     </td>
-                                    <td><a class="text-center"href="{{route('companies.show', ['company'=>$company] )}}">View</a> / 
-                                        <a class="text-center"href="/companies/{{$company->id}}/edit">Edit</a>
-                                        / <a class="text-center"href="/delete_company/{{$company->id}}">Delete</a></td>
+                                    <td><a id="text_btn" title="view company details" class="text-center"href="{{route('companies.show', ['company'=>$company] )}}"> View</a> / 
+                                        <a id="edit_btn" title="edit company" class="text-center"href="/companies/{{$company->id}}/edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
+                                        / <a id="delete_btn" title="delete company" class="text-center"href="/delete_company/{{$company->id}}"><i class="fa fa-trash" aria-hidden="true"></i></a></td>
                                 </tr>
+                                @endif
                                 @endforeach
                             </tbody>
                         </table>

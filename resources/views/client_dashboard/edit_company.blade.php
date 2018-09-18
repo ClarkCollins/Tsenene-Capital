@@ -112,7 +112,8 @@
                         {!! Form::hidden('_method', 'PUT') !!}
 
 
-                        {{Form::submit('Submit',['class'=>'btn btn-xl btn-dark  col-md-offset-4 col-md-4'])}}
+                        {{Form::submit('Submit',['class'=>'btn btn-xl btn-dark  col-md-offset-4 col-md-4','id'=>'create_btn2'])}}
+                        
 
 
                         {!! Form::close() !!}

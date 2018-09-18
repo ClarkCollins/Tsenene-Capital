@@ -8,7 +8,7 @@
     <div class="page-breadcrumb">
         <div class="row">
             <div class="col-5 align-self-center">
-                <h4 class="page-title">Company Profile</h4>
+                <h4 class="page-title">Company</h4>
             </div>
             <div class="col-7 align-self-center">
                 <div class="d-flex align-items-center justify-content-end">
@@ -17,7 +17,7 @@
                             <li class="breadcrumb-item">
                                 <a href="#">Home</a>
                             </li>
-                            <li class="breadcrumb-item active" aria-current="page">Company Profile</li>
+                            <li class="breadcrumb-item active" aria-current="page">Company</li>
                         </ol>
                     </nav>
                 </div>
@@ -36,7 +36,7 @@
                     </div>
                     <div class="container" style="padding-bottom: 50px; padding-top: 8px">
                         <a href="/dashboard" class="btn btn-default pull-right">Back</a>
-                        <br><hr>
+                        <br><br><hr>
 
                         <div class="col-md-offset-1 col-md-10">
 
@@ -100,7 +100,7 @@
                             </div>
 
 
-                            {{Form::submit('Submit',['class'=>'btn btn-xl btn-dark col-md-offset-4 col-md-4'])}}
+                            {{Form::submit('Submit',['class'=>'btn btn-xl btn-dark col-md-offset-4 col-md-4','id'=>'create_btn2'])}}
 
 
                             {!! Form::close() !!}

@@ -29,9 +29,7 @@ class CompaniesController extends Controller
         $user = User::find($user_id);
         $trackings = Tracking::select()->get();
         $uploads = Upload::select()->get();
-        $deleted = "No";
-//        $companies = DB::select('select * from companies where deleted =?',[$deleted]);
-        $companies = Company::select('*')->paginate(5);
+        $companies = Company::orderBy('company_name')->paginate(5);
         return view('client_dashboard.dashboard',['companies'=> $companies,'trackings'=>$trackings,'uploads'=>$uploads]);
       
     }

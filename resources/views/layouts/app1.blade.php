@@ -9,14 +9,12 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <!-- Favicon icon -->
-     <link href="{{ asset('img/favicon.png') }}" rel="icon">
-     <link href="{{ asset('img/apple-touch-icon.png') }}" rel="apple-touch-icon">
+      <link href="{{ asset('images/favicon.ico') }}" rel="icon">
     <title>Tsenene</title>
     <!-- Custom CSS -->
     <link href="{{ asset('css/chartist.min.css') }}" rel="stylesheet" type="text/css">
     <!-- Custom CSS -->
     <link href="{{ asset('css/style.min.css') }}" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-lite/1.3.0/material.amber-light_blue.min.css">
     <link  rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -24,6 +22,24 @@
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
 <![endif]-->
+    <style>
+#create_btn2 {
+    background-color: #3EC1D5; /* Green */
+    border: none;
+    color: white;
+    padding: 8px 24px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    width:120px;
+    border-radius: 0 !important;
+    margin: auto;
+}
+#create_btn:hover,#create_btn2:hover { 
+    color:black;
+}
+        </style>
 </head>
 
 <body>
@@ -54,10 +70,10 @@
                     <!-- Logo -->
                     <!-- ============================================================== -->
                     <div class="navbar-brand">
-                        <a href="dashboard" class="logo" style="height: 66px">
-                            <h4 style="text-align: center"><b><span  style="color:#3EC1D5">Tsenene</span>&nbsp;<span  style="color:#FFFFFF">Capital</span></b></h4>
-                        </a>
-                    </div>
+                            <a href="/dashboard" class="logo">
+                                <img src="{{ asset('images/logo-tsenene.png') }}" class="light-logo" style="width:230px;height: 60px" alt="homepage">
+                            </a>
+                        </div>
                     <!-- ============================================================== -->
                     <!-- End Logo -->
                     <!-- ============================================================== -->
@@ -105,9 +121,9 @@
                         <!-- User profile and search -->
                         <!-- ============================================================== -->
                         <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark pro-pic" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="{{ asset('images/collins.jpg') }}" alt="user" class="rounded-circle" width="31">&nbsp;&nbsp;<span style="color:black">{{Auth::user()->name}}</span></a>
+                            <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark pro-pic" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="{{ asset('storage/document_uploads/profile_photos/') }}/<?php echo Auth::user()->photo_path; ?>" alt="user" class="rounded-circle" width="31">&nbsp;&nbsp;<span style="color:black">{{Auth::user()->name}}</span></a>
                             <div class="dropdown-menu dropdown-menu-right user-dd animated">
-                                <a class="dropdown-item" href="javascript:void(0)"><i class="ti-user m-r-5 m-l-5"></i> My Profile</a>
+                                <a class="dropdown-item" href="profile"><i class="ti-user m-r-5 m-l-5"></i> My Profile</a>
                                 <a href="{{ route('logout') }}"
                                    onclick="event.preventDefault();
                                        document.getElementById('logout-form').submit();">&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-power-off m-r-5 m-l-5"></i>

@@ -9,7 +9,7 @@
     <div class="page-breadcrumb">
         <div class="row">
             <div class="col-5 align-self-center">
-                <h4 class="page-title">Uploads</h4>
+                <h4 class="page-title">Upload</h4>
             </div>
             <div class="col-7 align-self-center">
                 <div class="d-flex align-items-center justify-content-end">
@@ -18,7 +18,7 @@
                             <li class="breadcrumb-item">
                                 <a href="#">Home</a>
                             </li>
-                            <li class="breadcrumb-item active" aria-current="page">Uploads</li>
+                            <li class="breadcrumb-item active" aria-current="page">Upload</li>
                         </ol>
                     </nav>
                 </div>
@@ -35,7 +35,7 @@
                     <div class="card-body">
                         
                     </div>
-                    <div style="margin-left: 100px; margin-right: 100px; padding-bottom: 30px" class="col-md-offset-1 col-md-10">
+                    <div style="margin: auto; padding-bottom: 30px" class="col-md-offset-1 col-md-10">
                         <h4 class="card-title">Upload documents</h4><br>
         <a href="/dashboard" class="btn btn-default pull-right">Back</a>
         <br><hr>
@@ -123,7 +123,7 @@
                 
                
                 
-                {{Form::submit('Submit',['class'=>'btn btn-xl btn-dark '])}}
+                {{Form::submit('Submit',['class'=>'btn btn-xl btn-dark ','id'=>'create_btn2'])}}
 
                 
                 </form>
