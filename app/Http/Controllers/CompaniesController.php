@@ -79,7 +79,7 @@ public function view_companies()
             'company_name' => 'required',
             'registration_number' => 'required',
             'mission_statement' => 'required',
-            'primary_contact_number' => 'required',
+            'primary_contact_number' => 'required|digits:10',
             'primary_contact_email' => 'required'
 
         ]);

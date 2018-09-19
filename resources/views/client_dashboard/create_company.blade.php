@@ -92,7 +92,7 @@
 
                             <div class="form-group col-md-offset-2 col-md-8">
                                 {{Form::label('primary_contact_number', 'Primary Contact Number')}}
-                                {{Form::number('primary_contact_number','',['class'=>'form-control','placeholder'=>'Primary Contact Number'])}}
+                                {{Form::number('primary_contact_number','',['class'=>'form-control','placeholder'=>'Primary Contact Number','title'=>'this is a numeric field and has to be 10 characters'])}}
                             </div>
 
                             <div class="form-group col-md-offset-2 col-md-8">
