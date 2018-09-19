@@ -9,7 +9,7 @@ use App\Bank;
 use App\User;
 use App\Tracking;
 use App\Upload;
-
+use Auth;
 
 class CompaniesController extends Controller
 {
@@ -73,7 +73,7 @@ public function view_companies()
      */
     public function store(Request $request)
     {
-  
+        $user = Auth::user()->id;
         //
         $this->validate($request,[
             'company_name' => 'required',
@@ -96,7 +96,7 @@ public function view_companies()
         $company->activity_description = $request->input('activity_description');
         $company->primary_contact_number = $request->input('primary_contact_number');
         $company->primary_contact_email = $request->input('primary_contact_email');
-        $company->user_id = auth()->user()->id;
+        $company->user_id = $user;
  
         $company->save();
 

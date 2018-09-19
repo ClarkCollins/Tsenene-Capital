@@ -49,6 +49,7 @@
                             <tbody> 
                                 @foreach($companies as $company)
                                 @if($company -> deleted == "No")
+                                @if($company -> user_id == Auth::user()->id)
                                 <tr>
                                     <td><?php echo ucwords($company->company_name)?></td>
                                     <td><?php echo ucfirst($company->primary_contact_email)?></td>
@@ -78,6 +79,7 @@
                                         <a id="edit_btn" title="edit company" class="text-center"href="/companies/{{$company->id}}/edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
                                         / <a id="delete_btn" title="delete company" onclick="return confirm('Are you sure you want to delete this company?');" class="text-center"href="/delete_company/{{$company->id}}"><i class="fa fa-trash" aria-hidden="true"></i></a></td>
                                 </tr>
+                                @endif
                                 @endif
                                 @endforeach
                             </tbody>

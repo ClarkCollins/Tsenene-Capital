@@ -55,7 +55,8 @@
 
                             <div class="form-group col-md-offset-2 col-md-8">
                                 {{Form::label('website_url', 'Website')}}
-                                {{Form::text('website_url','',['class'=>'form-control','placeholder'=>'Website'])}}
+                                <input class="form-control" placeholder="Website" type="url" name="website_url" pattern="https?://.+" title="Include http://">
+<!--                                {{Form::text('website_url','',['class'=>'form-control','placeholder'=>'Website'])}}-->
                             </div>
 
                             <div class="form-group col-md-offset-2 col-md-8">

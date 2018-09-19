@@ -177,7 +177,7 @@
                             <!-- User profile and search -->
                             <!-- ============================================================== -->
                             <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark pro-pic" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="{{ asset('storage/document_uploads/profile_photos/') }}/<?php echo Auth::user()->photo_path; ?>" alt="user" class="rounded-circle" width="31">&nbsp;&nbsp;<span style="color:black">{{Auth::user()->name}}</span></a>
+                                <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark pro-pic" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="{{ asset('storage/document_uploads/profile_photos/') }}/<?php echo Auth::user()->photo_path; ?>" alt="user" class="rounded-circle" width="31">&nbsp;&nbsp;<span style="color:black"><?php echo ucwords(Auth::user()->name); ?></span></a>
                                 <div class="dropdown-menu dropdown-menu-right user-dd animated">
                                     <a class="dropdown-item" href="profile"><i class="ti-user m-r-5 m-l-5"></i> My Profile</a>
                                     &nbsp;<a id="logout_btn" href="{{ route('logout') }}"

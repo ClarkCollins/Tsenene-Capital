@@ -168,7 +168,7 @@
                                                     <div class="col-md-6 ">
                                                         <div class="form-group{{ $errors->has('name') ? ' has-error' : '' }}" >
                                                             <br> <label>Name</label>
-                                                            <input id="name" name="name"  type="text" value="<?php echo Auth::user()->name; ?>" class="form-control" autofocus>
+                                                            <input id="name" name="name"  type="text" value="<?php echo ucwords(Auth::user()->name); ?>" class="form-control" autofocus>
                                                             @if ($errors->has('name'))
                                                             <span class="help-block">
                                                                 <strong>{{ $errors->first('name') }}</strong>
