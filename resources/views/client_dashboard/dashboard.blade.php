@@ -34,7 +34,7 @@
                     <div class="card-body">
                         <h4 class="card-title">List of Companies</h4>
                     </div>
-                    <a id="create_btn" href="add_company" class="btn">Add New Company</a>
+                    <a id="create_btn" href="add_company" class="btn">Create Company</a>
                     <div class="table-responsive m-t-40"  style="margin-left: 2px; margin-right: 1px">
                         <table id="myTable" class="table-bordered table-striped"cellspacing="0" width="100%">
 
@@ -76,7 +76,7 @@
                                     </td>
                                     <td><a id="text_btn" title="view company details" class="text-center"href="{{route('companies.show', ['company'=>$company] )}}"> View</a> / 
                                         <a id="edit_btn" title="edit company" class="text-center"href="/companies/{{$company->id}}/edit"><i class="fa fa-pencil-square-o" aria-hidden="true"></i></a>
-                                        / <a id="delete_btn" title="delete company" class="text-center"href="/delete_company/{{$company->id}}"><i class="fa fa-trash" aria-hidden="true"></i></a></td>
+                                        / <a id="delete_btn" title="delete company" onclick="return confirm('Are you sure you want to delete this company?');" class="text-center"href="/delete_company/{{$company->id}}"><i class="fa fa-trash" aria-hidden="true"></i></a></td>
                                 </tr>
                                 @endif
                                 @endforeach

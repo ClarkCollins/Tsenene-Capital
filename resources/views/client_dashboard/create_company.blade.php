@@ -96,7 +96,7 @@
 
                             <div class="form-group col-md-offset-2 col-md-8">
                                 {{Form::label('primary_contact_email', 'Primary Contact Email')}}
-                                {{Form::text('primary_contact_email','',['class'=>'form-control','placeholder'=>'Primary Contact Email'])}}
+                                {{Form::email('primary_contact_email','',['class'=>'form-control','placeholder'=>'Primary Contact Email'])}}
                             </div>
 
 

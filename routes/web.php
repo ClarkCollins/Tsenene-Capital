@@ -24,8 +24,10 @@ Route::get('/users/{id}/{name}', function ($id, $name) {
     return 'this is user'.$id. 'with a name of'.$name;
 });
 */
+//Client
+Route::get('/login', 'LoginController@login');
+Route::post('/password/reset', 'Auth\ResetPasswordController@reset');
 
-Route::get('/login', 'LoginController@login')->name('home');
 Route::get('/dashboard', 'CompaniesController@dashboard');
 Route::resource('companies', 'CompaniesController');
 Route::resource('banks', 'BanksController');
@@ -45,16 +47,13 @@ Route::get('/delete_company/{id}', 'CompaniesController@delete');
 
 Route::get('/profile', 'ProfileController@profile');
 Route::post('/profile_update', 'ProfileController@update_user_profile');
-Route::get('/delete_photo', 'ProfileController@delete_user_photo');
+Route::get('/delete_photo/{id}', 'ProfileController@delete_user_photo');
 Route::post('/update_password', 'ProfileController@update_user_password');
 
+//Admin
 Auth::routes();
 Route::get('/all_company', 'CompaniesController@view_companies');
 Route::get('/all_upload/{id}', 'UploadsController@all_upload');
 Route::get('/all_tracking/{id}', 'TrackingController@view_tracking');
-//Route::get('/all_upload/{id}', 'UploadsController@all_upload');
 Route::get('/all_companies/{id}', 'CompaniesController@view_company');
-//Route::get('/all_company', function () {
-//    return view('companies.show_all_company');
-//});
 Route::get('/admin_home', 'HomeController@admin_home')->name('admin_home');

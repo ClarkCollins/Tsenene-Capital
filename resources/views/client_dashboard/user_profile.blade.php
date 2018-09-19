@@ -159,7 +159,7 @@
                                         <img src="{{ asset('storage/document_uploads/profile_photos/') }}/<?php echo Auth::user()->photo_path; ?>" alt="user photo" style="display:block;width:150px;height:150px;outline: #4CAF50 solid 2px;outline-style:dotted;">
                                         @if(Auth::user()->photo_path == "default.png")
                                         @else
-                                        &nbsp;&nbsp;&nbsp;<a href="/delete_photo"><i class="fa fa-times"></i> remove photo</a>
+                                        &nbsp;&nbsp;&nbsp;<a href="/delete_photo/<?php echo Auth::user()->photo_path; ?>"><i class="fa fa-times"></i> remove photo</a>
                                         @endif
                                         <form action="/profile_update" enctype="multipart/form-data"  method="post">
                                             {{ csrf_field() }}

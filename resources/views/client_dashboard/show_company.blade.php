@@ -34,7 +34,7 @@
                     <div style="margin: auto;padding-bottom: 30px;padding-top: 30px" class="col-md-offset-1 col-md-10">
 
 
-                        <h2>{{$company->company_name}}</h2>
+                        <h2><?php echo ucwords($company->company_name);?></h2>
                         <br>
 
 

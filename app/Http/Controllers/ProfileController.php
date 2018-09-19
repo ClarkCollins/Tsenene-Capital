@@ -49,12 +49,13 @@ class ProfileController extends Controller
         $user->save();
         return redirect('/profile')->with('success', 'Profile Updated');
     }
-    public function delete_user_photo() {
+    public function delete_user_photo($file) {
         $id = Auth::user()->id;
         $user = User::find($id);
         $name = "default.png";
         $user->photo_path = $name;
         $user->save();
+        unlink(storage_path('app/public/document_uploads/profile_photos/'.$file));
         return redirect('/profile');
     }
     public function update_user_password(Request $request) {

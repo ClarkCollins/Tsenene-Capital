@@ -10,7 +10,7 @@
         <meta name="author" content="">
         <!-- Favicon icon -->
         <link href="images/favicon.ico" rel="icon" sizes="32x32">
-        <title>Tsenene</title>
+        <title>Tsenene Capital</title>
         <!-- Custom CSS -->
         <link href="{{ asset('css/chartist.min.css') }}" rel="stylesheet" type="text/css">
         <!-- Custom CSS -->
@@ -88,6 +88,12 @@
 }
 #create_btn:hover,#create_btn2:hover,#text_btn:hover,#edit_btn:hover { 
     color:black;
+}
+#logout_btn{
+    color:#161823
+}
+#logout_btn:hover{
+    color:#4CA170
 }
         </style>
     </head>
@@ -174,13 +180,13 @@
                                 <a class="nav-link dropdown-toggle text-muted waves-effect waves-dark pro-pic" href="" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img src="{{ asset('storage/document_uploads/profile_photos/') }}/<?php echo Auth::user()->photo_path; ?>" alt="user" class="rounded-circle" width="31">&nbsp;&nbsp;<span style="color:black">{{Auth::user()->name}}</span></a>
                                 <div class="dropdown-menu dropdown-menu-right user-dd animated">
                                     <a class="dropdown-item" href="profile"><i class="ti-user m-r-5 m-l-5"></i> My Profile</a>
-                                    <a href="{{ route('logout') }}"
+                                    &nbsp;<a id="logout_btn" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();
                                                document.getElementById('logout-form').submit();">&nbsp;&nbsp;&nbsp;&nbsp;<i class="fa fa-power-off m-r-5 m-l-5"></i>
                                         <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                                             {{ csrf_field() }}
                                         </form>
-                                        Logout</a>
+                                          Logout</a>
                                 </div>
                             </li>
                             <!-- ============================================================== -->
@@ -243,8 +249,8 @@
         <!-- ============================================================== -->
         <!-- All Jquery -->
         <!-- ============================================================== -->
-        <script src="{{ asset('js/jquery.min.js') }}"></script>
         <!-- Bootstrap tether Core JavaScript -->
+        <script src="{{ asset('js/jquery.min.js') }}"></script>
         <script src="{{ asset('js/popper.min.js') }}"></script>
         <script src="{{ asset('js/bootstrap.min.js') }}"></script>
         <!-- slimscrollbar scrollbar JavaScript -->

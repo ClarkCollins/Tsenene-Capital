@@ -9,52 +9,37 @@
         <!-- CSRF Token -->
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>Beerly Beloved</title>
+        <title>Tsenene</title>
 
         <!-- Styles -->
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
         <style>
-            .center {
-                display: block;
-                margin-left: auto;
-                margin-right: auto;
-                height: 100px;
-                width: 100px;
-            }
-            .topleft {
-                position: absolute;
-                height: 110px;
-                width: 110px;
-                top: 8px;
-                left: 16px;
-                font-size: 18px;
-            }
-            body{
-                background-image:url(images/loginbg.png);
-                
-                /* Center and scale the image nicely */
-                background-repeat: no-repeat; 
-                background-position: center;
-                background-attachment: fixed;       
-                webkit-background-size: cover;
-                -moz-background-size: cover;
-                -o-background-size: cover;
-                background-size: cover;
-                height:100%;
-                width:100%;
-            }
-            #app{
-                margin-top: 100px;
-            }
+            #subBtn {
+    background-color: #3EC1D5; /* Green */
+    border: none;
+    color: white;
+    padding: 8px 24px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 0 !important;
+}
+#border{
+    border-radius: 0 !important;
+    border:none
+}
+#subBtn:hover { 
+    color:black;
+}
             
         </style>
     </head>
-    <body><img src="{{ asset('images/bblogo.png') }}" class="topleft">
-<br><br><br><br>
+    <body style="padding: 120px 0; background-color: #F2F4F5">
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
-            <div class="panel panel-default">
+            <div id="border" class="panel panel-default">
                 <div class="panel-body"><h4><b>Reset Password</b></h4><hr>
 
                 <div class="panel-body">
@@ -83,8 +68,8 @@
 
                         <div class="form-group">
                             <div class="col-md-6 col-md-offset-4">
-                                <button type="submit" class="btn btn-primary">
-                                    Send Password Reset Link
+                                <button id="subBtn" type="submit" class="btn btn-primary">
+                                    Send Reset Link
                                 </button>
                             </div>
                         </div>
@@ -99,6 +84,17 @@
 <script src="{{ asset('js/app.js') }}"></script>
     </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
 
 
 

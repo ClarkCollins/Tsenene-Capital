@@ -8,12 +8,11 @@
         <!-- CSRF Token -->
         <meta name="csrf-token" content="{{ csrf_token() }}">
 
-        <title>Tsenene</title>
+        <title>Tsenene Capital</title>
 
         <!-- Styles -->
         <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-        <link href="img/favicon.png" rel="icon">
-        <link href="img/apple-touch-icon.png" rel="apple-touch-icon">
+       <link href="images/favicon.ico" rel="icon" sizes="32x32">
         <style>
             .center {
                 display: block;
@@ -65,11 +64,14 @@
 #subBtn:hover { 
     color:black;
 }
+#com_name{
+    text-decoration: none;
+}
         </style>
     </head>
     <body>
                   <div class="text-block topleft"> 
-                      <h1><b><span  style="color:#3EC1D5">Tsenene</span>&nbsp;<span  style="color:#FFFFFF">Capital</span></b></h1>
+                      <a title="return home" id="com_name" href="/"><h1><b><span  style="color:#3EC1D5">Tsenene</span>&nbsp;<span  style="color:#FFFFFF">Capital</span></b></h1></a>
                   </div>
            
 <!--        <img src='images/bblogo.png' class="topleft">-->
@@ -137,7 +139,7 @@
                                             Don't have an account?
                                             <a style="color:#3EC1D5" class="btn btn-link" href="{{ route('register') }}">
                                                 Sign Up Here
-                                            </a>
+                                            </a><br>
                                         </div>
                                     </div>
                                 </form>
@@ -152,6 +154,23 @@
         <script src="{{ asset('js/app.js') }}"></script>
     </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
