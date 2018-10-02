@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.admin_app')
 
     @section('content')
     <div class="container">
@@ -7,7 +7,7 @@
         <h2>List of Registered Banks</h2>
         <br>
         <a href="{{url('/banks/create')}}" class="btn btn-primary pull-right">Add New Bank</a>
-        <a href="{{url('/home')}}" class="btn btn-default">Back</a>
+        <a href="{{url('/admin_home')}}" class="btn btn-default">Back</a>
 
         <br><hr>
 

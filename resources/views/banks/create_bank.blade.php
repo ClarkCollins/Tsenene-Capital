@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.admin_app')
 
     @section('content')
     <div class="container">
@@ -6,7 +6,7 @@
 
         <h2>Create Bank</h2>
         <br>
-        <a href="/home" class="btn btn-default pull-right">Back</a>
+        <a href="/banks" class="btn btn-default pull-right">Back</a>
         <br><hr>
 
         <div class="col-md-offset-1 col-md-10">
@@ -23,6 +23,6 @@
 
                 
                 {!! Form::close() !!}
-        </div>
+        </div><br><br><br><br><br><br>
 </div>
     @endsection

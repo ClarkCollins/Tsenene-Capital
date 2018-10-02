@@ -42,6 +42,7 @@
                             <a class="dropdown-item" href="{{route('admin_home')}}">Dashboard</a> 
 <!--                            <a class="dropdown-item" href="{{route('banks.index')}}">Banks</a>-->
                             <a class="dropdown-item" href="all_company">Companies</a>
+                            <a class="dropdown-item" href="banks">Banks</a>
                             <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                  document.getElementById('logout-form').submit();"><i class="fa fa-power-off"></i>
                                 Logout

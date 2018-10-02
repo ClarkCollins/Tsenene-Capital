@@ -63,10 +63,10 @@ class BanksController extends Controller
      */
     public function show($id)
     {
-        //
 
-        $banks = Bank::orderBy('bank_name', 'desc')->get();
-         return view('banks.show_bank',['banks'=> $banks]);
+         $bank = Bank::find($id);
+         $banks = Bank::orderBy('bank_name', 'desc')->get();
+         return view('banks.show_bank',['banks'=> $banks,'banks'=> $bank]);
     }
 
     /**
@@ -77,8 +77,7 @@ class BanksController extends Controller
      */
     public function edit($id)
     {
-        $banks = Bank::find($id);
-
+        $bank = Bank::find($id);
         return view('banks.edit_bank')->with('banks', $bank);
     }
 
@@ -97,7 +96,6 @@ class BanksController extends Controller
             'bank_name' => 'required'
 
         ]);
-
         $bank = Bank::find($id);
         $bank->bank_name  = $request->input('bank_name');
 
